@@ -2,6 +2,7 @@
 
 public class FirstPersonLook : MonoBehaviour
 {
+    //LOL!
     [SerializeField]
     Transform character;
     public float sensitivity = 2;
