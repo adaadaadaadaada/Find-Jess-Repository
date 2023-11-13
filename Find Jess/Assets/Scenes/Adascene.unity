@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18900612, g: 0.21909246, b: 0.24243715, a: 1}
+  m_IndirectSpecularColor: {r: 0.1888507, g: 0.21904093, b: 0.24241504, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -649,9 +649,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 369f6e2183b722643a362091261e9359, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 994735647}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 369f6e2183b722643a362091261e9359, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 994735648}
   m_SourcePrefab: {fileID: 100100000, guid: 369f6e2183b722643a362091261e9359, type: 3}
 --- !u!4 &671205015 stripped
@@ -802,18 +799,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 369f6e2183b722643a362091261e9359, type: 3}
   m_PrefabInstance: {fileID: 671205014}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &994735647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994735644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5439dc59ffef32746828ffc093a87f7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &994735648
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1033,7 +1018,6 @@ GameObject:
   - component: {fileID: 1247697535}
   - component: {fileID: 1247697534}
   - component: {fileID: 1247697533}
-  - component: {fileID: 1247697536}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -1115,18 +1099,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1247697536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247697532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 357e363f21196024eb79d07925107e8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1320377684
 PrefabInstance:
   m_ObjectHideFlags: 0
