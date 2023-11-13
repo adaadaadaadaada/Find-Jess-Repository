@@ -12,8 +12,8 @@ public class JessSFX : MonoBehaviour
     public List<AudioClip> audioClips;
     public AudioClip currentClip;
     public AudioSource source;
-    public float minWaitBetweenPlays = 5f;
-    public float maxWaitBetweenPlays = 10f;
+    public float minWaitBetweenPlays = 7f;
+    public float maxWaitBetweenPlays = 17f;
     public float waitTimeCountdown = -1f;
 
     void Start()
