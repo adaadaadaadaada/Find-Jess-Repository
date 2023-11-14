@@ -956,17 +956,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f329f4189d228ab4da8be1829686864f, type: 3}
   m_PrefabInstance: {fileID: 1060406973}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
+
 --- !u!4 &1184384523 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4207293392497186, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
   m_PrefabInstance: {fileID: 251402096}
   m_PrefabAsset: {fileID: 0}
->>>>>>> parent of b1eb78b (Merge branch 'main' into Jess)
-=======
->>>>>>> parent of 02cd940 (Merge pull request #5 from adaadaadaadaada/Jess)
+
 --- !u!1 &1247697532
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,13 +975,10 @@ GameObject:
   - component: {fileID: 1247697535}
   - component: {fileID: 1247697534}
   - component: {fileID: 1247697533}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
+
   - component: {fileID: 1247697537}
->>>>>>> parent of b1eb78b (Merge branch 'main' into Jess)
-=======
->>>>>>> parent of 02cd940 (Merge pull request #5 from adaadaadaadaada/Jess)
+
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -1066,9 +1060,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
+
 --- !u!114 &1247697537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,9 +1093,7 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 58b6ea080ba5f39498966ea775ffce1d, type: 2}
   m_BuildHeightMesh: 0
->>>>>>> parent of b1eb78b (Merge branch 'main' into Jess)
-=======
->>>>>>> parent of 02cd940 (Merge pull request #5 from adaadaadaadaada/Jess)
+
 --- !u!1001 &1320377684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1355,9 +1346,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 87dbf080af6938547803df2fb5e61dfd, type: 3}
   m_PrefabInstance: {fileID: 1892131257}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 --- !u!1001 &1993339795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1450,9 +1438,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1848636804}
   m_SourcePrefab: {fileID: 100100000, guid: 1c593d5da3546d247bfd0b95b4fa02d7, type: 3}
->>>>>>> parent of b1eb78b (Merge branch 'main' into Jess)
-=======
->>>>>>> parent of 02cd940 (Merge pull request #5 from adaadaadaadaada/Jess)
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
