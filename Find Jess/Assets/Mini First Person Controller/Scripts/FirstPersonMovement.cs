@@ -1,8 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class FirstPersonMovement : MonoBehaviour
 {
+    public bool isHiding = false;
+
     public float speed = 5;
 
     [Header("Running")]
