@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -20,10 +21,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+  //      if (m_CaughtPlayer)
         {
             TakeDamage(1);
         }
+        
     }
 
     public void TakeDamage(int damage)
