@@ -154,9 +154,10 @@ public class EnemyMovement : MonoBehaviour
         m_CurrentWayPointIndex = (m_CurrentWayPointIndex + 1) % waypoints.Length;
         navMeshAgent.SetDestination(waypoints[m_CurrentWayPointIndex].position);
     }
-    void CaughtPlayer()
+    public void CaughtPlayer()
     {
         m_CaughtPlayer = true;
+
     }
     void LookingPlayer(Vector3 player)
     {
