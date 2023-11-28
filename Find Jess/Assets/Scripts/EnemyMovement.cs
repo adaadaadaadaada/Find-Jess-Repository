@@ -158,6 +158,7 @@ public class EnemyMovement : MonoBehaviour
     {
         m_CaughtPlayer = true;
 
+
     }
     void LookingPlayer(Vector3 player)
     {

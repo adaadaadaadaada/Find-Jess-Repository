@@ -11,6 +11,9 @@ public class PlayerHealth : MonoBehaviour
 
     public HealthBar healthBar;
     public EnemyMovement enemyMovement;
+    public GameManagerScript gameManager;
+
+    private bool isDead;
 
 
     // Start is called before the first frame update
@@ -18,16 +21,17 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        enemyMovement.CaughtPlayer();
     }
 
     // Update is called once per frame
     void Update()
     {
-        void CaughtPlayer()
-        {
-            TakeDamage(1);
-        }
+     //   if()
+     //   {
+     //       enemyMovement.CaughtPlayer();
+     //       TakeDamage(1);
+     //   }
+
     }
 
     public void TakeDamage(int damage)
@@ -36,9 +40,12 @@ public class PlayerHealth : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
         {
-            Destroy(gameObject);
+            isDead = true;
+            gameManager.gameOver();
+            Debug.Log("Dead");
+
         }
     }
 }
