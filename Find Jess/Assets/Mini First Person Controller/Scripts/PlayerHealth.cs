@@ -24,13 +24,21 @@ public class PlayerHealth : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    //void Update()
+    //{
      //   if()
      //   {
      //       enemyMovement.CaughtPlayer();
      //       TakeDamage(1);
      //   }
+
+    //}
+    void Update()
+    {
+        if (currentHealth <= 3)
+        {
+            TakeDamage(1);
+        }
 
     }
 
@@ -43,7 +51,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0 && !isDead)
         {
             isDead = true;
-            gameManager.gameOver();
+            gameManager.GameOver();
             Debug.Log("Dead");
 
         }
