@@ -52,7 +52,7 @@ public class PlayerHealth : MonoBehaviour
         {
             isDead = true;
             gameManager.GameOver();
-            Debug.Log("Dead");
+            
 
         }
     }
