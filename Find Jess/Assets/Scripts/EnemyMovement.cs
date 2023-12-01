@@ -203,6 +203,8 @@ public class EnemyMovement : MonoBehaviour
                     else
                     {
                         m_PlayerInRange = false;
+                        m_CaughtPlayer = false;
+                        m_IsPatrol = true;
                     }
                 }
                 else
