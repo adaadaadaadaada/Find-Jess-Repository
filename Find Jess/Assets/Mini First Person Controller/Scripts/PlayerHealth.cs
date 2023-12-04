@@ -1,7 +1,9 @@
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] public AudioSource biteSFX;
 
     public int maxHealth = 3;
     public int currentHealth;
@@ -34,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 Attack();
                 TakeDamage(1);
+                biteSFX.Play();
             }
         }
     }
