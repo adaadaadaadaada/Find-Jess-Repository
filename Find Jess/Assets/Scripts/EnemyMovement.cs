@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
+    FirstPersonMovement _player;
+
     public Animator animator;
 
     public NavMeshAgent navMeshAgent;
@@ -49,6 +51,8 @@ public class EnemyMovement : MonoBehaviour
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speedWalk;
         navMeshAgent.SetDestination(waypoints[m_CurrentWayPointIndex].position);
+
+        _player = GameObject.Find("Player").GetComponent<FirstPersonMovement>();
 
         animator = GetComponent<Animator>();
     }
@@ -193,12 +197,25 @@ public class EnemyMovement : MonoBehaviour
                 float dstToPlayer = Vector3.Distance(transform.position, player.position);
                 if (!Physics.Raycast(transform.position, dirToPlayer, dstToPlayer, obstacleMask))
                 {
-                    m_PlayerInRange = true;
-                    m_IsPatrol = false;
+                    if (!_player.isHiding)
+                    {
+                        m_PlayerInRange = true;
+                        m_IsPatrol = false;
+                    }
+                    else
+                    {
+                        m_PlayerInRange = false;
+                        m_CaughtPlayer = false;
+                        m_IsPatrol = true;
+                    }
                 }
                 else
                 {
-                    m_PlayerInRange = false;
+                    if (!_player.isHiding)
+                    {
+                        m_PlayerInRange = false;
+                        m_IsPatrol = true;
+                    }
                 }
             }
             if (Vector3.Distance(transform.position, player.position) > viewRadius)

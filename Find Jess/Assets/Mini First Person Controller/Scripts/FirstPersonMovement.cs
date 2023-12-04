@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class FirstPersonMovement : MonoBehaviour
 {
+    public bool isHiding = false;
+
     public float speed = 5;
 
     [Header("Running")]
