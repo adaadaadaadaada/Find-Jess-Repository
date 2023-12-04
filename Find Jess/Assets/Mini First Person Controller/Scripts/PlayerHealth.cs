@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,6 +8,15 @@ public class PlayerHealth : MonoBehaviour
 
     public HealthBar healthBar;
     public EnemyMovement enemyMovement;
+    public GameManagerScript gameManager;
+
+    public GameObject player;
+    public GameObject enemy;
+    public float cooldownTime = 5f;
+    public float detectionRadius = 1f;
+    private float nextAttackTime = 5f;
+
+    private bool isDead;
 
 
     // Start is called before the first frame update
@@ -18,17 +24,30 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        enemyMovement.CaughtPlayer();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        void CaughtPlayer()
+        if (Time.time >= nextAttackTime)
         {
-            TakeDamage(1);
+            if (IsPlayerNearEnemy())
+            {
+                Attack();
+                TakeDamage(1);
+            }
         }
     }
+    void Attack()
+    {
+        nextAttackTime = Time.time + cooldownTime;
+    }
+    bool IsPlayerNearEnemy()
+    {
+
+        float distance = Vector3.Distance(player.transform.position, enemy.transform.position);
+        return distance <= detectionRadius;
+    }
+
 
     public void TakeDamage(int damage)
     {
@@ -36,9 +55,12 @@ public class PlayerHealth : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
         {
-            Destroy(gameObject);
+            isDead = true;
+            gameManager.GameOver();
+
+
         }
     }
 }
