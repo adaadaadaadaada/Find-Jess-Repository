@@ -44,7 +44,7 @@ public class EnemySFX : MonoBehaviour
                 waitTimeCountdown -= Time.deltaTime;
             }
         }
-        if (_enemy.CaughtPlayer(true))
+      //  if (_enemy.CaughtPlayer(true))
         {
             //jos enemy caughtplayer = true play sound
             //chasingSFX
