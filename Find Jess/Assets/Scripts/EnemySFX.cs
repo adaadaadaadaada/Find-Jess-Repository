@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 /// <summary>
 /// Plays a randomized audio clip from 3 clips every once in a while
@@ -9,6 +11,10 @@ using UnityEngine;
 
 public class EnemySFX : MonoBehaviour
 {
+    EnemyMovement _enemy;
+
+    public AudioClip chasingSFX;
+
     public List<AudioClip> audioClips;
     public AudioClip currentClip;
     public AudioSource source;
@@ -18,6 +24,7 @@ public class EnemySFX : MonoBehaviour
 
     void Start()
     {
+        _enemy = GameObject.Find("Monster").GetComponent<EnemyMovement>();
         source = GetComponent<AudioSource>();
     }
 
@@ -36,6 +43,11 @@ public class EnemySFX : MonoBehaviour
             {
                 waitTimeCountdown -= Time.deltaTime;
             }
+        }
+        if (_enemy.CaughtPlayer(true))
+        {
+            //jos enemy caughtplayer = true play sound
+            //chasingSFX
         }
     }
 }
