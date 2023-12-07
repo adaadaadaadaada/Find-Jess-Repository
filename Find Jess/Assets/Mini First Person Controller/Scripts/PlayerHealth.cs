@@ -13,7 +13,9 @@ public class PlayerHealth : MonoBehaviour
     public GameManagerScript gameManager;
 
     public GameObject player;
-    public GameObject enemy;
+    public GameObject enemy1;
+    public GameObject enemy2;
+    public GameObject enemy3;
     public float cooldownTime = 5f;
     public float detectionRadius = 1f;
     private float nextAttackTime = 5f;
@@ -32,7 +34,25 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Time.time >= nextAttackTime)
         {
-            if (IsPlayerNearEnemy())
+            if (IsPlayerNearEnemy1())
+            {
+                Attack();
+                TakeDamage(1);
+                biteSFX.Play();
+            }
+        }
+        if (Time.time >= nextAttackTime)
+        {
+            if (IsPlayerNearEnemy2())
+            {
+                Attack();
+                TakeDamage(1);
+                biteSFX.Play();
+            }
+        }
+        if (Time.time >= nextAttackTime)
+        {
+            if (IsPlayerNearEnemy3())
             {
                 Attack();
                 TakeDamage(1);
@@ -44,12 +64,25 @@ public class PlayerHealth : MonoBehaviour
     {
         nextAttackTime = Time.time + cooldownTime;
     }
-    bool IsPlayerNearEnemy()
+    bool IsPlayerNearEnemy1()
     {
 
-        float distance = Vector3.Distance(player.transform.position, enemy.transform.position);
+        float distance = Vector3.Distance(player.transform.position, enemy1.transform.position);
         return distance <= detectionRadius;
     }
+    bool IsPlayerNearEnemy2()
+    {
+
+        float distance = Vector3.Distance(player.transform.position, enemy2.transform.position);
+        return distance <= detectionRadius;
+    }
+    bool IsPlayerNearEnemy3()
+    {
+
+        float distance = Vector3.Distance(player.transform.position, enemy3.transform.position);
+        return distance <= detectionRadius;
+    }
+
 
 
     public void TakeDamage(int damage)
