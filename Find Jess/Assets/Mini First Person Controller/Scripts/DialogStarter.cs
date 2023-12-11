@@ -13,10 +13,14 @@ public class DialogStarter : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
                 ConversationManager.Instance.StartConversation(myConversation);
             }
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        ConversationManager.Instance.EndConversation();
     }
 }
