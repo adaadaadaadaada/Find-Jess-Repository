@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using static UnityEditor.Experimental.GraphView.GraphView;
+using static UnityEditor.PlayerSettings;
+using static UnityEngine.EventSystems.EventTrigger;
 
 /// <summary>
 /// Plays a randomized audio clip from 3 clips every once in a while
@@ -13,7 +15,7 @@ public class EnemySFX : MonoBehaviour
 {
     EnemyMovement _enemy;
 
-    public AudioClip chasingSFX;
+    [SerializeField] private AudioSource chasingSFX;
 
     public List<AudioClip> audioClips;
     public AudioClip currentClip;
@@ -44,10 +46,16 @@ public class EnemySFX : MonoBehaviour
                 waitTimeCountdown -= Time.deltaTime;
             }
         }
-      //  if (_enemy.CaughtPlayer(true))
+        UpdateChasingMusic();
+    }
+
+    void UpdateChasingMusic()
+    {
+        // jos enemy caughtplayer = true play sound
+
+        if (_enemy.m_CaughtPlayer == true)
         {
-            //jos enemy caughtplayer = true play sound
-            //chasingSFX
+            chasingSFX.Play();
         }
     }
 }

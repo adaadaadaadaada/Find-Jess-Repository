@@ -34,7 +34,7 @@ public class EnemyMovement : MonoBehaviour
     bool m_PlayerInRange;
     bool m_PlayerNear;
     bool m_IsPatrol;
-    bool m_CaughtPlayer;
+    public bool m_CaughtPlayer;
     
     void Start()
     {
