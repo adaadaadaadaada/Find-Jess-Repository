@@ -16,6 +16,7 @@ public class DialogStarter : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 ConversationManager.Instance.StartConversation(myConversation);
+                
             }
         }
     }
