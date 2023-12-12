@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
+    EnemySFX _enemySFX;
+
     FirstPersonMovement _player;
 
     public Animator animator;
@@ -38,6 +40,8 @@ public class EnemyMovement : MonoBehaviour
     
     void Start()
     {
+        _enemySFX = GetComponent<EnemySFX>();
+
         m_PlayerPosition = Vector3.zero;
         m_IsPatrol = true;
         m_CaughtPlayer = false;
@@ -78,10 +82,14 @@ public class EnemyMovement : MonoBehaviour
         m_PlayerNear = false;
         playerLastPosition = Vector3.zero;
 
-        if (!m_CaughtPlayer)
+        //if (!m_CaughtPlayer)
         {
             Move(speedRun);
             navMeshAgent.SetDestination(m_PlayerPosition);
+        }
+        //else
+        {
+            _enemySFX.PlayChasingMusic();
         }
         if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
         {
@@ -158,10 +166,18 @@ public class EnemyMovement : MonoBehaviour
         m_CurrentWayPointIndex = (m_CurrentWayPointIndex + 1) % waypoints.Length;
         navMeshAgent.SetDestination(waypoints[m_CurrentWayPointIndex].position);
     }
-    public void CaughtPlayer()
+    public void CaughtPlayer(bool value)
     {
-        m_CaughtPlayer = true;
-
+        if (m_CaughtPlayer == value) return;
+        m_CaughtPlayer = value;
+        if (value)
+        {
+            Debug.Log("caught player");
+        }
+        else
+        {
+            Debug.Log("lost player");
+        }
 
     }
     void LookingPlayer(Vector3 player)
@@ -199,13 +215,14 @@ public class EnemyMovement : MonoBehaviour
                 {
                     if (!_player.isHiding)
                     {
+                        CaughtPlayer(true);
                         m_PlayerInRange = true;
                         m_IsPatrol = false;
                     }
                     else
                     {
                         m_PlayerInRange = false;
-                        m_CaughtPlayer = false;
+                        CaughtPlayer(false);
                         m_IsPatrol = true;
                     }
                 }
