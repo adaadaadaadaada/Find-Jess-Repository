@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
+    FirstPersonMovement _player;
+
     public GameObject gameOverUI;
     public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        _player = GameObject.Find("Player").GetComponent<FirstPersonMovement>();
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -31,6 +35,10 @@ public class GameManagerScript : MonoBehaviour
 
     public void GameOver()
     {
+        _player.speed = 0;
+        _player.canRun = false;
+
+
         gameOverUI.SetActive(true);
     }
 
