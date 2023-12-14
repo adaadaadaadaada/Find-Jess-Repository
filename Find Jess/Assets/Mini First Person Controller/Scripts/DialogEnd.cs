@@ -5,11 +5,19 @@ using DialogueEditor;
 using UnityEditor;
 using Unity.VisualScripting;
 using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.SceneManagement;
 
 public class DialogEnd : MonoBehaviour
 {
-    [SerializeField] private NPCConversation myConversation;
-    public GameObject player;
+    [SerializeField] private NPCConversation myConversation1;
+    FirstPersonMovement _player;
+
+    void Start()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
 
     private void OnTriggerStay(Collider other)
     {
@@ -17,16 +25,22 @@ public class DialogEnd : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
+                ConversationManager.Instance.StartConversation(myConversation1);
                 _player = GameObject.Find("Player").GetComponent<FirstPersonMovement>();
+                _player.isHiding = true;
                 _player.speed = 0;
                 _player.canRun = false;
-                ConversationManager.Instance.StartConversation(myConversation);
 
+                StartCoroutine(WaitForSecond());
             }
         }
     }
-    private void OnTriggerExit(Collider other)
+    private IEnumerator WaitForSecond()
     {
+        yield return new WaitForSeconds(10);
         ConversationManager.Instance.EndConversation();
+        SceneManager.LoadScene("Main Menu");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

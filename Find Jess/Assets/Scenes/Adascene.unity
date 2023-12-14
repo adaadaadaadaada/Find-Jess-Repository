@@ -2318,16 +2318,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentIDCounter: 3
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":623,"yPos":254},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"What
+  CurrentIDCounter: 4
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":true,"xPos":605,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"What
     on earth were those things!?\r\nI think they won''t follow me here.\r\nWe''re
-    leaving first thing in the morning. I need to stop going camping.","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"jess","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":1,"Volume":0}]}'
+    leaving first thing in the morning. I need to stop going camping.","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"jess","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":15,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":602,"yPos":127},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":null,"parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
   DefaultFont: {fileID: 0}
   NodeSerializedDataList:
   - {fileID: 1253513686}
+  - {fileID: 1253513687}
   ContinueFont: {fileID: 0}
   EndConversationFont: {fileID: 0}
   Event:
@@ -3047,7 +3048,6 @@ GameObject:
   - component: {fileID: 711935519}
   - component: {fileID: 711935518}
   - component: {fileID: 711935517}
-  - component: {fileID: 711935516}
   - component: {fileID: 711935520}
   m_Layer: 0
   m_Name: ConversationTrigger 1
@@ -3056,19 +3056,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &711935516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711935515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec4dd48d66111e4aa0bb04600c295df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myConversation: {fileID: 635037496}
 --- !u!65 &711935517
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3088,8 +3075,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.6109837, y: 4.757155, z: 1.4950632}
-  m_Center: {x: -0.305491, y: -1.878577, z: 0.018583085}
+  m_Size: {x: 1.3345404, y: 4.757155, z: 0.8726581}
+  m_Center: {x: -0.16726933, y: -1.878577, z: 0.0035148046}
 --- !u!33 &711935518
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3125,6 +3112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fcb56af880afb4a9b47c9578f95f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myConversation1: {fileID: 635037496}
 --- !u!1 &712085079
 GameObject:
   m_ObjectHideFlags: 0
@@ -5270,6 +5258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1253513684}
   - component: {fileID: 1253513686}
+  - component: {fileID: 1253513687}
   m_Layer: 0
   m_Name: ConversationEventInfo
   m_TagString: Untagged
@@ -5308,6 +5297,25 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   NodeID: 0
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1253513687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253513682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 3
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
   Audio: {fileID: 0}
